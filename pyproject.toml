@@ -27,3 +27,14 @@ dev = [
     "pytest>=9.2.0",
     "ruff>=0.17.5",
 ]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["B008"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
