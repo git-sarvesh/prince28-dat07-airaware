@@ -1,12 +1,16 @@
+from collections.abc import AsyncIterator
+
 from fastapi import Request
+from sqlalchemy.ext.asyncio import AsyncSession
 
 from airaware.config import Settings
-from airaware.store import DocumentStore
 
 
 def get_settings(request: Request) -> Settings:
     return request.app.state.settings
 
 
-def get_store(request: Request) -> DocumentStore:
-    return request.app.state.store
+async def get_session(request: Request) -> AsyncIterator[AsyncSession]:
+    session_factory = request.app.state.sessionmaker
+    async with session_factory() as session:
+        yield session

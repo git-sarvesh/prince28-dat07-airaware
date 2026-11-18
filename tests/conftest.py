@@ -4,8 +4,8 @@ from pathlib import Path
 import pytest
 from fastapi.testclient import TestClient
 
-from airaware.api.main import create_app
 from airaware.config import Settings
+from airaware.main import create_app
 
 SAMPLE_RECORDS = [
     {

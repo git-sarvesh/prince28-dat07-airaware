@@ -4,8 +4,8 @@ import pytest
 from fastapi.testclient import TestClient
 from pydantic import ValidationError
 
-from airaware.api.main import create_app
 from airaware.config import Settings
+from airaware.main import create_app
 
 
 def test_health_ok(client: TestClient) -> None:
