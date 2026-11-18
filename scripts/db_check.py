@@ -1,5 +1,7 @@
 import asyncio
+
 from sqlalchemy import text
+
 from airaware.config import get_settings
 from airaware.db.session import make_engine
 
