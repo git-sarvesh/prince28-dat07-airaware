@@ -1,7 +1,7 @@
 from typing import Any
 
 from fastapi import APIRouter, Depends, HTTPException, Query
-from sqlalchemy import or_, select
+from sqlalchemy import String, cast, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from airaware.api.deps import get_session
@@ -35,6 +35,7 @@ async def list_documents(
             or_(
                 Document.title.ilike(pattern),
                 Document.external_id.ilike(pattern),
+                cast(Document.metadata_, String).ilike(pattern),
             )
         )
     stmt = stmt.limit(limit)

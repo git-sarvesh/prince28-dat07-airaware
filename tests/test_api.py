@@ -1,9 +1,11 @@
-from pathlib import Path
+from collections.abc import AsyncIterator
 
 import pytest
 from fastapi.testclient import TestClient
 from pydantic import ValidationError
+from sqlalchemy.exc import ArgumentError
 
+from airaware.api.deps import get_session
 from airaware.config import Settings
 from airaware.main import create_app
 
@@ -21,17 +23,26 @@ def test_ready_ok_when_five_records_present(client: TestClient) -> None:
     assert res.json() == {"status": "ready", "records": 5}
 
 
-def test_ready_returns_503_when_records_missing(tmp_path: Path) -> None:
-    empty = tmp_path / "empty.json"
-    empty.write_text("[]", encoding="utf-8")
+def test_ready_returns_503_when_records_missing() -> None:
+    class _EmptyResult:
+        def scalar_one(self) -> int:
+            return 0
+
+    class _EmptySession:
+        async def execute(self, _stmt) -> _EmptyResult:
+            return _EmptyResult()
+
+    async def _override_session() -> AsyncIterator[_EmptySession]:
+        yield _EmptySession()
+
     app = create_app(
         Settings(
             app_name="AirAware-Test",
             app_env="local",
             log_level="WARNING",
-            data_file_path=str(empty),
         )
     )
+    app.dependency_overrides[get_session] = _override_session
     res = TestClient(app).get("/ready")
     assert res.status_code == 503
     assert res.json()["status"] == "not_ready"
@@ -79,8 +90,6 @@ def test_get_document_not_found_has_request_id(client: TestClient) -> None:
     }
 
 
-def test_settings_fail_fast_when_required_var_missing(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.delenv("APP_NAME", raising=False)
-    monkeypatch.delenv("DATA_FILE_PATH", raising=False)
-    with pytest.raises(ValidationError):
-        Settings(_env_file=None)
+def test_settings_rejects_empty_database_url() -> None:
+    with pytest.raises((ValidationError, ValueError, ArgumentError)):
+        Settings(_env_file=None, database_url="")
