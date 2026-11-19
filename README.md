@@ -39,3 +39,28 @@ AQI computed exactly for 100% of 30 test readings; standards answered correctly 
 uv sync
 cp .env.example .env   # Windows: copy .env.example .env
 uv run uvicorn airaware.api.main:create_app --factory --reload
+
+## Run locally in one command
+
+You need Docker Desktop running. From a fresh clone:
+
+```bash
+docker compose up --build -d
+```
+
+This starts Postgres (with pgvector), Redis, runs the migrations and loads the sample data.
+- API docs: http://localhost:8000/docs
+- Liveness: http://localhost:8000/health
+- Readiness (checks the database): http://localhost:8000/ready
+
+Stop with `docker compose down`. Add `-v` to also delete the database volume.
+
+## Develop and test
+
+| Task | Mac / Linux | Windows |
+|---|---|---|
+| Run the API with reload | `make dev` | `uv run poe dev` |
+| Unit tests (no network) | `make test` | `uv run poe test` |
+| Integration tests (needs `docker compose up`) | `make test-integration` | `uv run poe test-integration` |
+| Coverage report | `make cov` | `uv run poe cov` |
+| Lint and format check | `make lint` | `uv run poe lint` |

@@ -13,3 +13,9 @@ build/
 !.env.example
 .DS_Store
 Thumbs.db
+
+.pytest_tmp/
+
+# Test and coverage output
+.coverage
+htmlcov/

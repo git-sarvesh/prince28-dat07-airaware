@@ -1,0 +1,193 @@
+### version information
+
+```
+pre-commit version: 4.7.0
+git --version: git version 2.54.0.windows.1
+sys.version:
+    3.12.16 (main, Nov 11 2026, 00:20:04) [MSC v.1944 64 bit (AMD64)]
+sys.executable: D:\PLacement_training\prince28-dat07-airaware\.venv\Scripts\python.exe
+os.name: nt
+sys.platform: win32
+```
+
+### error information
+
+```
+An unexpected error has occurred: CalledProcessError: command: ('D:\\PLacement_training\\prince28-dat07-airaware\\.venv\\Scripts\\python.exe', '-mvirtualenv', 'D:\\PLacement_training\\prince28-dat07-airaware\\.cache\\pre-commit\\repolylcakuw\\py_env-python3')
+return code: 1
+stdout:
+    fail
+    Traceback (most recent call last):
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\embed\via_app_data\via_app_data.py", line 136, in _get
+        result = get_wheel(
+                 ^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\acquire.py", line 88, in get_wheel
+        wheel = from_bundle(distribution, version, for_py_version, search_dirs, app_data, do_periodic_update, env)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\bundle.py", line 45, in from_bundle
+        wheel = periodic_update(distribution, of_version, for_py_version, wheel, search_dirs, app_data, per, env)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\periodic_update.py", line 77, in periodic_update
+        handle_auto_update(distribution, for_py_version, wheel, search_dirs, app_data, env)
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\periodic_update.py", line 105, in handle_auto_update
+        app_data.embed_update_log(distribution, for_py_version).write(u_log.to_dict())
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\app_data\via_disk_folder.py", line 246, in write
+        self.file.write_text(json.dumps(content, sort_keys=True, indent=2), encoding="utf-8")
+      File "C:\Users\Sarvesh Balaji\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 1047, in write_text
+        with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "C:\Users\Sarvesh Balaji\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 1013, in open
+        return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    PermissionError: [Errno 13] Permission denied: 'C:\\Users\\Sarvesh Balaji\\AppData\\Local\\pypa\\virtualenv\\Cache\\wheel\\3.12\\embed\\3\\pip.json'
+    fail
+    Traceback (most recent call last):
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\embed\via_app_data\via_app_data.py", line 136, in _get
+        result = get_wheel(
+                 ^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\acquire.py", line 93, in get_wheel
+        wheel = download_wheel(
+                ^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\acquire.py", line 166, in download_wheel
+        env = pip_wheel_env_run(search_dirs, app_data, env)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\acquire.py", line 227, in pip_wheel_env_run
+        wheel = get_wheel(
+                ^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\acquire.py", line 88, in get_wheel
+        wheel = from_bundle(distribution, version, for_py_version, search_dirs, app_data, do_periodic_update, env)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\bundle.py", line 45, in from_bundle
+        wheel = periodic_update(distribution, of_version, for_py_version, wheel, search_dirs, app_data, per, env)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\periodic_update.py", line 86, in periodic_update
+        u_log = UpdateLog.from_app_data(app_data, distribution, for_py_version)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\periodic_update.py", line 204, in from_app_data
+        store: Final[ContentStore] = app_data.embed_update_log(distribution, for_py_version)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\app_data\via_disk_folder.py", line 157, in embed_update_log
+        return EmbedDistributionUpdateStoreDisk(self.lock / "wheel" / for_py_version / "embed" / "3", distribution)  # ty: ignore[invalid-argument-type]
+                                                ~~~~~~~~~~^~~~~~~~~
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\util\lock.py", line 43, in __truediv__
+        return type(self)(self.path / other)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\util\lock.py", line 90, in __init__
+        super().__init__(folder)
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\util\lock.py", line 37, in __init__
+        self.path = path.resolve() if path.exists() else path
+                                      ^^^^^^^^^^^^^
+      File "C:\Users\Sarvesh Balaji\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 860, in exists
+        self.stat(follow_symlinks=follow_symlinks)
+      File "C:\Users\Sarvesh Balaji\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 840, in stat
+        return os.stat(self, follow_symlinks=follow_symlinks)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Sarvesh Balaji\\AppData\\Local\\pypa\\virtualenv\\Cache\\wheel'
+    PermissionError(13, 'Access is denied')
+    RuntimeError: seed failed due to failing to download wheels pip
+stderr:
+    Exception ignored in: <function ReentrantFileLock.__del__ at 0x000001D474CE1300>
+    Traceback (most recent call last):
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\util\lock.py", line 94, in __del__
+        self._del_lock(self._lock)
+                       ^^^^^^^^^^
+    AttributeError: 'ReentrantFileLock' object has no attribute '_lock'
+```
+
+```
+Traceback (most recent call last):
+  File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\pre_commit\error_handler.py", line 73, in error_handler
+    yield
+  File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\pre_commit\main.py", line 429, in main
+    return run(args.config, store, args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\pre_commit\commands\run.py", line 443, in run
+    install_hook_envs(to_install, store)
+  File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\pre_commit\repository.py", line 229, in install_hook_envs
+    _hook_install(hook)
+  File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\pre_commit\repository.py", line 85, in _hook_install
+    lang.install_environment(
+  File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\pre_commit\languages\python.py", line 226, in install_environment
+    cmd_output_b(*venv_cmd, cwd='/')
+  File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\pre_commit\util.py", line 111, in cmd_output_b
+    raise CalledProcessError(returncode, cmd, stdout_b, stderr_b)
+pre_commit.util.CalledProcessError: command: ('D:\\PLacement_training\\prince28-dat07-airaware\\.venv\\Scripts\\python.exe', '-mvirtualenv', 'D:\\PLacement_training\\prince28-dat07-airaware\\.cache\\pre-commit\\repolylcakuw\\py_env-python3')
+return code: 1
+stdout:
+    fail
+    Traceback (most recent call last):
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\embed\via_app_data\via_app_data.py", line 136, in _get
+        result = get_wheel(
+                 ^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\acquire.py", line 88, in get_wheel
+        wheel = from_bundle(distribution, version, for_py_version, search_dirs, app_data, do_periodic_update, env)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\bundle.py", line 45, in from_bundle
+        wheel = periodic_update(distribution, of_version, for_py_version, wheel, search_dirs, app_data, per, env)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\periodic_update.py", line 77, in periodic_update
+        handle_auto_update(distribution, for_py_version, wheel, search_dirs, app_data, env)
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\periodic_update.py", line 105, in handle_auto_update
+        app_data.embed_update_log(distribution, for_py_version).write(u_log.to_dict())
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\app_data\via_disk_folder.py", line 246, in write
+        self.file.write_text(json.dumps(content, sort_keys=True, indent=2), encoding="utf-8")
+      File "C:\Users\Sarvesh Balaji\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 1047, in write_text
+        with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "C:\Users\Sarvesh Balaji\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 1013, in open
+        return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    PermissionError: [Errno 13] Permission denied: 'C:\\Users\\Sarvesh Balaji\\AppData\\Local\\pypa\\virtualenv\\Cache\\wheel\\3.12\\embed\\3\\pip.json'
+    fail
+    Traceback (most recent call last):
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\embed\via_app_data\via_app_data.py", line 136, in _get
+        result = get_wheel(
+                 ^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\acquire.py", line 93, in get_wheel
+        wheel = download_wheel(
+                ^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\acquire.py", line 166, in download_wheel
+        env = pip_wheel_env_run(search_dirs, app_data, env)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\acquire.py", line 227, in pip_wheel_env_run
+        wheel = get_wheel(
+                ^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\acquire.py", line 88, in get_wheel
+        wheel = from_bundle(distribution, version, for_py_version, search_dirs, app_data, do_periodic_update, env)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\bundle.py", line 45, in from_bundle
+        wheel = periodic_update(distribution, of_version, for_py_version, wheel, search_dirs, app_data, per, env)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\periodic_update.py", line 86, in periodic_update
+        u_log = UpdateLog.from_app_data(app_data, distribution, for_py_version)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\seed\wheels\periodic_update.py", line 204, in from_app_data
+        store: Final[ContentStore] = app_data.embed_update_log(distribution, for_py_version)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\app_data\via_disk_folder.py", line 157, in embed_update_log
+        return EmbedDistributionUpdateStoreDisk(self.lock / "wheel" / for_py_version / "embed" / "3", distribution)  # ty: ignore[invalid-argument-type]
+                                                ~~~~~~~~~~^~~~~~~~~
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\util\lock.py", line 43, in __truediv__
+        return type(self)(self.path / other)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\util\lock.py", line 90, in __init__
+        super().__init__(folder)
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\util\lock.py", line 37, in __init__
+        self.path = path.resolve() if path.exists() else path
+                                      ^^^^^^^^^^^^^
+      File "C:\Users\Sarvesh Balaji\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 860, in exists
+        self.stat(follow_symlinks=follow_symlinks)
+      File "C:\Users\Sarvesh Balaji\AppData\Roaming\uv\python\cpython-3.12-windows-x86_64-none\Lib\pathlib.py", line 840, in stat
+        return os.stat(self, follow_symlinks=follow_symlinks)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    PermissionError: [WinError 5] Access is denied: 'C:\\Users\\Sarvesh Balaji\\AppData\\Local\\pypa\\virtualenv\\Cache\\wheel'
+    PermissionError(13, 'Access is denied')
+    RuntimeError: seed failed due to failing to download wheels pip
+stderr:
+    Exception ignored in: <function ReentrantFileLock.__del__ at 0x000001D474CE1300>
+    Traceback (most recent call last):
+      File "D:\PLacement_training\prince28-dat07-airaware\.venv\Lib\site-packages\virtualenv\util\lock.py", line 94, in __del__
+        self._del_lock(self._lock)
+                       ^^^^^^^^^^
+    AttributeError: 'ReentrantFileLock' object has no attribute '_lock'
+```
