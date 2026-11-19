@@ -1,5 +1,10 @@
-from pydantic import Field
+from functools import lru_cache
+from pathlib import Path
+
+from pydantic import field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
+
+from airaware.db.url import to_asyncpg_url
 
 
 class Settings(BaseSettings):
@@ -9,8 +14,18 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    app_name: str = Field(min_length=1)
-    app_env: str = Field(default="local", pattern="^(local|staging|production)$")
-    log_level: str = Field(default="INFO")
-    data_file_path: str = Field(min_length=1)
-    llm_api_key: str = Field(default="")
+    app_name: str = "airaware"
+    app_env: str = "local"
+    log_level: str = "INFO"
+    data_file: Path = Path("data/sample_records.json")
+    database_url: str = "postgresql+asyncpg://localhost:5432/airaware"
+
+    @field_validator("database_url", mode="before")
+    @classmethod
+    def _normalize_db_url(cls, v: str) -> str:
+        return to_asyncpg_url(v)
+
+
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()
