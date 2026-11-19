@@ -1,0 +1,84 @@
+{
+  "arguments": null,
+  "content": {
+    "_creators": null,
+    "architecture": 64,
+    "base_exec_prefix": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none",
+    "base_prefix": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none",
+    "debug_build": false,
+    "distutils_install": {},
+    "exec_prefix": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none",
+    "executable": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+    "file_system_encoding": "utf-8",
+    "free_threaded": false,
+    "has_venv": true,
+    "implementation": "CPython",
+    "marker_environment": {
+      "implementation_name": "cpython",
+      "implementation_version": "3.12.16",
+      "os_name": "nt",
+      "platform_machine": "AMD64",
+      "platform_python_implementation": "CPython",
+      "platform_release": "11",
+      "platform_system": "Windows",
+      "platform_version": "10.0.26200",
+      "python_full_version": "3.12.16",
+      "python_version": "3.12",
+      "sys_platform": "win32"
+    },
+    "max_size": 9223372036854775807,
+    "original_executable": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+    "os": "nt",
+    "path": [
+      "D:\\PLacement_training\\prince28-dat07-airaware\\.venv\\Lib\\site-packages\\python_discovery",
+      "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python312.zip",
+      "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\DLLs",
+      "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib",
+      "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none",
+      "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\site-packages"
+    ],
+    "platform": "win32",
+    "prefix": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none",
+    "real_prefix": null,
+    "stdout_encoding": "utf-8",
+    "sysconfig": {
+      "makefile_filename": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\config\\Makefile"
+    },
+    "sysconfig_paths": {
+      "data": "{base}",
+      "include": "{installed_base}/Include",
+      "platlib": "{base}/Lib/site-packages",
+      "platstdlib": "{base}/Lib",
+      "purelib": "{base}/Lib/site-packages",
+      "scripts": "{base}/Scripts",
+      "stdlib": "{installed_base}/Lib"
+    },
+    "sysconfig_platform": "win-amd64",
+    "sysconfig_scheme": "venv",
+    "sysconfig_vars": {
+      "INSTSONAME": null,
+      "LIBDIR": null,
+      "PYTHONFRAMEWORK": null,
+      "Py_ENABLE_SHARED": null,
+      "base": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none",
+      "installed_base": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none"
+    },
+    "system_executable": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+    "system_stdlib": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib",
+    "system_stdlib_platform": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib",
+    "tcl_lib": null,
+    "tk_lib": null,
+    "version": "3.12.16 (main, Nov 11 2026, 00:20:04) [MSC v.1944 64 bit (AMD64)]",
+    "version_info": {
+      "major": 3,
+      "micro": 16,
+      "minor": 12,
+      "releaselevel": "final",
+      "serial": 0
+    },
+    "version_nodot": "312"
+  },
+  "hash": "0c4528e61357c23c5c85b629a72404b8d67adbb8c2ba407d5e6b4274821137b6",
+  "path": "C:\\Users\\Sarvesh Balaji\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\python.exe",
+  "st_mtime": 1794930364.3229845
+}
