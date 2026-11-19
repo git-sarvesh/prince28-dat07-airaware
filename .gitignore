@@ -15,3 +15,7 @@ build/
 Thumbs.db
 
 .pytest_tmp/
+
+# Test and coverage output
+.coverage
+htmlcov/
