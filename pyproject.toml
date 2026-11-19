@@ -28,6 +28,7 @@ dev = [
     "httpx>=0.28.1",
     "pre-commit>=4.7.0",
     "pytest>=9.2.0",
+    "pytest-cov>=7.1.0",
     "ruff>=0.17.5",
 ]
 
@@ -42,3 +43,13 @@ ignore = ["B008"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+addopts = "--cov=airaware --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["airaware"]
+branch = true
+omit = ["*/__pycache__/*"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false
