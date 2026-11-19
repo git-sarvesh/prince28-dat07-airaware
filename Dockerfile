@@ -24,9 +24,11 @@ FROM python:3.12-slim
 RUN groupadd --system app && useradd --system --gid app --home-dir /app --no-create-home app
 WORKDIR /app
 
-# Only what the app needs at runtime: the venv, migrations, and seed data.
+# Only what the app needs at runtime: the venv, migrations, scripts and seed data.
 COPY --from=builder --chown=app:app /app/.venv /app/.venv
+COPY --chown=app:app alembic.ini ./
 COPY --chown=app:app migrations ./migrations
+COPY --chown=app:app scripts ./scripts
 COPY --chown=app:app data ./data
 
 ENV PATH="/app/.venv/bin:$PATH" PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1
@@ -34,4 +36,4 @@ USER app
 EXPOSE 8000
 
 # Hosts like Render pass the port in $PORT; locally it defaults to 8000.
-CMD ["sh", "-c", "exec uvicorn airaware.api.main:create_app --factory --host 0.0.0.0 --port ${PORT:-8000}"]
+CMD ["sh", "-c", "exec uvicorn airaware.main:create_app --factory --host 0.0.0.0 --port ${PORT:-8000}"]
