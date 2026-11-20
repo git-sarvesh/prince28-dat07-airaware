@@ -10,6 +10,42 @@ from airaware.config import Settings
 from airaware.main import create_app
 
 
+def test_health_returns_default_version() -> None:
+    app = create_app(
+        Settings(
+            _env_file=None,
+            app_name="airaware",
+            app_env="test",
+            log_level="WARNING",
+        )
+    )
+    res = TestClient(app).get("/health")
+    assert res.status_code == 200
+    body = res.json()
+    assert body["status"] == "ok"
+    assert body["env"] == "test"
+    assert body["version"] == "dev"
+
+
+def test_health_reports_configured_git_sha() -> None:
+    sha = "abc123def456"
+    app = create_app(
+        Settings(
+            _env_file=None,
+            app_name="airaware",
+            app_env="production",
+            log_level="WARNING",
+            git_sha=sha,
+        )
+    )
+    res = TestClient(app).get("/health")
+    assert res.status_code == 200
+    body = res.json()
+    assert body["status"] == "ok"
+    assert body["env"] == "production"
+    assert body["version"] == sha
+
+
 def test_ready_returns_503_when_records_missing() -> None:
     class _EmptyResult:
         def scalar_one(self) -> int:
