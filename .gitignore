@@ -19,3 +19,7 @@ Thumbs.db
 # Test and coverage output
 .coverage
 htmlcov/
+
+# Local test/cache directories
+.cache/
+.pytest_tmp/
